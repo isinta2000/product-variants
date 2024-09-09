@@ -20,13 +20,9 @@ This repository contains the full source code for the app, including data models
 
 - [Flutter SDK](https://flutter.dev/docs/get-started/install) installed on your machine.
 - A compatible IDE (e.g., Visual Studio Code, Android Studio) with Flutter support.
-
+- APK can be found at build/app/outputs/flutter-apk/app-release.apk
 ### Installation
 
 1. **Clone the Repository**:
    ```sh
    git clone https://github.com/isinta2000/product-variants.git
-
-1. **APK**:
-   ```sh
-   APK can be found at build/app/outputs/flutter-apk/app-release.apk
