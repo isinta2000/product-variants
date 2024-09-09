@@ -2,7 +2,7 @@
 
 ## Overview
 
-The **Product Variants Flutter App** is a desktop application built using Flutter that allows users to manage product options and their associated values. The app dynamically generates all possible product variants based on the options and values entered by the user.
+The **Product Variants Flutter App** is an application built using Flutter that allows users to manage product options and their associated values. The app dynamically generates all possible product variants based on the options and values entered by the user.
 
 This repository contains the full source code for the app, including data models, user interface components, and logic for managing and displaying product variants.
 
