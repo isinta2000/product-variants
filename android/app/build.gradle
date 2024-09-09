@@ -37,6 +37,29 @@ android {
             signingConfig = signingConfigs.debug
         }
     }
+
+    signingConfigs {
+    release {
+        if (project.hasProperty('keyProperties')) {
+            def keyProperties = new Properties()
+            file("key.properties").withInputStream { stream ->
+                keyProperties.load(stream)
+            }
+            keyAlias keyProperties['keyAlias']
+            keyPassword keyProperties['keyPassword']
+            storeFile file(keyProperties['storeFile'])
+            storePassword keyProperties['storePassword']
+        }
+    }
+}
+buildTypes {
+    release {
+        signingConfig signingConfigs.release
+        minifyEnabled false
+        useProguard false
+    }
+}
+
 }
 
 flutter {

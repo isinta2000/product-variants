@@ -99,45 +99,50 @@ class _ProductOptionsScreenState extends State<ProductOptionsScreen> {
       appBar: AppBar(
         title: Text('Product Variants'),
       ),
-      body: Padding(
-        padding: EdgeInsets.all(16.0),
-        child: Column(
-          children: [
-            TextField(
-              controller: _optionNameController,
-              decoration: InputDecoration(labelText: 'Option Name'),
-            ),
-            ElevatedButton(
-              onPressed: _addOption,
-              child: Text('Add Option'),
-            ),
-            Expanded(
-              child: ListView.builder(
-                itemCount: _options.length,
-                itemBuilder: (context, index) {
-                  return ExpansionTile(
-                    title: Text(_options[index].name),
+      body: Column(
+        children: [
+          Expanded(
+            child: Padding(
+              padding: EdgeInsets.all(16.0),
+              child: ListView(
+                children: [
+                  TextField(
+                    controller: _optionNameController,
+                    decoration: InputDecoration(labelText: 'Option Name'),
+                  ),
+                  ElevatedButton(
+                    onPressed: _addOption,
+                    child: Text('Add Option'),
+                  ),
+                  ..._options.map((option) => ExpansionTile(
+                    title: Text(option.name),
                     children: [
-                      TextField(
-                        controller: _valueController,
-                        decoration: InputDecoration(labelText: 'Value'),
+                      Padding(
+                        padding: EdgeInsets.all(8.0),
+                        child: TextField(
+                          controller: _valueController,
+                          decoration: InputDecoration(labelText: 'Value'),
+                        ),
                       ),
                       ElevatedButton(
-                        onPressed: () => _addValue(_options[index]),
+                        onPressed: () => _addValue(option),
                         child: Text('Add Value'),
                       ),
-                      ..._options[index].values.map((value) => ListTile(title: Text(value))).toList(),
+                      ...option.values.map((value) => ListTile(title: Text(value))).toList(),
                     ],
-                  );
-                },
+                  )).toList(),
+                ],
               ),
             ),
-            ElevatedButton(
+          ),
+          Padding(
+            padding: EdgeInsets.all(16.0),
+            child: ElevatedButton(
               onPressed: _generateVariants,
               child: Text('Generate Variants'),
             ),
-          ],
-        ),
+          ),
+        ],
       ),
     );
   }
