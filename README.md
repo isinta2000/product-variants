@@ -26,3 +26,7 @@ This repository contains the full source code for the app, including data models
 1. **Clone the Repository**:
    ```sh
    git clone https://github.com/isinta2000/product-variants.git
+
+1. **APK**:
+   ```sh
+   APK can be found at build/app/outputs/flutter-apk/app-release.apk
