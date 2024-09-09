@@ -1,0 +1,20 @@
+name: product_variants_app
+description: A Flutter app for managing product variants.
+version: 1.0.0
+
+environment:
+  sdk: ">=3.5.0 <4.0.0"  # Set the Dart SDK version constraint
+
+dependencies:
+  flutter:
+    sdk: flutter
+  # Add other dependencies here as needed
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  # Add other development dependencies here as needed
+
+flutter:
+  uses-material-design: true
+  # Add other Flutter configuration here as needed
